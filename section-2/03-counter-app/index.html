@@ -21,20 +21,25 @@
 
       <!-- click events with v-on directive (using methods) -->
       <button v-on:click="add(5)">Add 5</button>
-      <button v-on:click="reduce(5)">Remove 5</button>
-
+      <!-- Event modifier: triggers the event on right click -->
+      <button v-on:click.right="reduce(5)">Substract 5</button>
       <!-- same functionality with inline events -->
       <!-- <button v-on:click="counter++">Add</button>
       <button v-on:click="counter--">Remove</button> -->
 
+      <!-- v-once directive: renders the element only once -->
+      <p v-once>Starting Counter: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-
       <!-- use the input, change or keyup event (alongside a method)-->
-      <input type="text" v-on:input="setName($event, 'Ordeñana')">
+      <input type="text" v-on:input="setName($event, 'Ordeñana')" v-on:keyup.enter="confirmInput">
       <!-- use the v-model directive for two-way binding (pass the data directly)-->
       <!-- <input type="text" v-model="name"> -->
-      <p>Your name: {{ name }}</p>
-
+      <p>Your name: {{ confirmedName }}</p>
+      <!-- Event modifier: prevents default submit behaviour -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>
