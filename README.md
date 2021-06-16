@@ -84,6 +84,9 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - Good practices with the Vue Style Guide
 - **Section 10**: [Project] The learning resources app
 - **Section 11**: Forms
+  - v-model on inputs (radio, checkbox..), select and on custom components, modifiers (trim, number...)
+  - Frontend form validation
+- **Section 12**: Http requests
 
 ### Useful resources
 
