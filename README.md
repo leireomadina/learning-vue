@@ -87,6 +87,9 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - v-model on inputs (radio, checkbox..), select and on custom components, modifiers (trim, number...)
   - Frontend form validation
 - **Section 12**: Http requests
+  - Firebase database setup
+  - Http GET and METHOD requests with fetch and error handling
+- **Section 13**: Routing
 
 ### Useful resources
 
