@@ -88,8 +88,10 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - Frontend form validation
 - **Section 12**: Http requests
   - Firebase database setup
-  - Http GET and METHOD requests with fetch and error handling
+  - Http GET and POST requests with fetch and error handling
 - **Section 13**: Routing
+  - Vue Router setup: installation, configuration and programmatic navigation
+  - Dynamic routes using params
 
 ### Useful resources
 
