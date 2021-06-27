@@ -21,6 +21,7 @@ export default {
     UserItem
   },
   inject: ['users', 'teams'],
+  props: ['teamId'],
   data() {
     return {
       teamName: '',
@@ -32,24 +33,39 @@ export default {
       // ],
     };
   },
-  created() {
+  methods: {
+    loadTeamMembers(teamId) {
     // console.log(this.$route);
-    const teamId = this.$route.params.teamId;
-    console.log(teamId);
+    // const teamId = route.params.teamId;
     const selectedTeam = this.teams.find(team => team.id === teamId);
-    console.log(selectedTeam);
+    // to prevent an error when there is no team selected
+    if(!selectedTeam) {
+      return;
+    }
     // members is an array full of ids
     const members = selectedTeam.members;
-    console.log(members);
     const selectedMembers = [];
     for(const member of members) {
       const selectedUser = this.users.find(user => user.id === member);
-      console.log(selectedUser);
       selectedMembers.push(selectedUser);
     }
-    console.log(selectedMembers);
     this.members = selectedMembers;
     this.teamName = selectedTeam.name;
+    }
+  },
+  created() {
+    // this.$route.path // teams/t1
+    // this.loadTeamMembers(this.$route);
+    this.loadTeamMembers(this.teamId);
+    console.log(this.$route.query);
+  },
+  watch: {
+    // $route(newRoute) {
+    //    this.loadTeamMembers(newRoute);
+    // }
+    teamId(newId) {
+       this.loadTeamMembers(newId);
+    }
   }
 };
 </script>
