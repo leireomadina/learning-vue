@@ -92,6 +92,10 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
 - **Section 13**: Routing
   - Vue Router setup: installation, configuration and programmatic navigation
   - Dynamic routes using params
+  - Nested and named routes
+  - How to control and modify scroll behaviour
+  - Navigation guards: global, per-route and in-component guards
+- **Section 14**: Animations and transitions
 
 ### Useful resources
 
