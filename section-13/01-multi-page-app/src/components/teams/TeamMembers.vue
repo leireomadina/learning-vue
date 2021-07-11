@@ -59,6 +59,14 @@ export default {
     this.loadTeamMembers(this.teamId);
     console.log(this.$route.query);
   },
+  beforeRouteUpdate(to, from, next) {
+    // triggers whenever the component updates because of a route change
+    // this works as an alternative to the watch method defined below:
+    // this.loadTeamMembers(to.params.teamId);
+    console.log('TeamMembers component beforeRouteUpdate');
+    console.log(to, from, next);
+    next();
+  },
   watch: {
     // $route(newRoute) {
     //    this.loadTeamMembers(newRoute);
