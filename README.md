@@ -100,6 +100,7 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - JavaScript transitions
   - Animating lists with transition-group component
   - Animating Route changes
+- **Section 15**: Vuex
 
 ### Useful resources
 
