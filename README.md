@@ -96,6 +96,10 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - How to control and modify scroll behaviour
   - Navigation guards: global, per-route and in-component guards
 - **Section 14**: Animations and transitions
+  - Transition component: CSS transitions and animations, custom CSS classes, transition events
+  - JavaScript transitions
+  - Animating lists with transition-group component
+  - Animating Route changes
 
 ### Useful resources
 
