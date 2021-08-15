@@ -101,6 +101,13 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - Animating lists with transition-group component
   - Animating Route changes
 - **Section 15**: Vuex
+  - Creating and using a Store
+  - State, Mutations, Actions and Getters
+  - Organize the Store using Modules and namespacing
+- **Section 16**: [Project] Find a Coach web app
+  - Creating and using a Store
+  - State, Mutations, Actions and Getters
+  - Organize the Store using Modules and namespacing
 
 ### Useful resources
 
