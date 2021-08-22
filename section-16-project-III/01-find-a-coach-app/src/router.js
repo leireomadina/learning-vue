@@ -15,6 +15,8 @@ const router = createRouter({
 		{
 			path: '/coaches/:id',
 			component: CoachDetail,
+			//passes the dynamic id value
+			props: true,
 			children: [
 				{ path: 'contact', component: ContactCoach } // example: coaches/c1/contact
 			]
