@@ -12,7 +12,6 @@
   </li>
 </template>
 
-
 <script>
 export default {
   props: ['id', 'firstName', 'lastName', 'rate', 'areas'],
@@ -29,8 +28,8 @@ export default {
     }
   }
 }
-
 </script>
+
 <style scoped>
 
 li {
