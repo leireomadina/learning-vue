@@ -8,6 +8,7 @@ import RequestsRecieved from './pages/requests/RequestsRecieved.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
+	mode: 'hash',
 	history: createWebHistory(),
 	routes: [
 		{ path: '/', redirect: '/coaches' },
