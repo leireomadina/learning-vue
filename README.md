@@ -105,6 +105,10 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - State, Mutations, Actions and Getters
   - Organize the Store using Modules and namespacing
 - **Section 16**: [Project] Find a Coach web app
+- **Section 17**: Authentication
+   - Signup and login functionality using Firebase, Vuex and tokens
+   - Logout and Auto Logout behaviour for security reasons using navigation guards
+- **Section 18**: Optimization and Deploy
 
 ### Useful resources
 
