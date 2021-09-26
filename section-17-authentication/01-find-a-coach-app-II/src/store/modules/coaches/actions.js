@@ -10,7 +10,9 @@ export default {
       areas: data.areas
     };
 
-    const response = await fetch(`https://vue-course-coach-app-52df4-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json`, {
+    const token = context.rootGetters.token;
+
+    const response = await fetch(`https://vue-course-coach-app-52df4-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json?auth=${token}`, {
       // use PUT to create a new entry if the id doesn't exist or overwrite if it does
       method: 'PUT',
       body: JSON.stringify(coachData)
