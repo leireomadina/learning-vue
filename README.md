@@ -109,6 +109,9 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
    - Signup and login functionality using Firebase, Vuex and tokens
    - Logout and Auto Logout behaviour for security reasons using navigation guards
 - **Section 18**: Optimization and Deploy
+  - Lazy loading routes
+  - How to deploy to Firebase hosting
+- **Section 19**: The Composition API
 
 ### Useful resources
 
