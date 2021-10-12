@@ -1,9 +1,17 @@
 <template>
   <base-container v-if="user">
     <h2>{{ user.fullName }}: Projects</h2>
-    <base-search v-if="hasProjects" @search="updateSearch" :search-term="enteredSearchTerm"></base-search>
+    <base-search
+      v-if="hasProjects"
+      @search="updateSearch"
+      :search-term="enteredSearchTerm"
+    ></base-search>
     <ul v-if="hasProjects">
-      <project-item v-for="prj in availableProjects" :key="prj.id" :title="prj.title"></project-item>
+      <project-item
+        v-for="prj in availableProjects"
+        :key="prj.id"
+        :title="prj.title"
+      ></project-item>
     </ul>
     <h3 v-else>No projects found.</h3>
   </base-container>
@@ -13,16 +21,18 @@
 </template>
 
 <script>
-import { ref, computed, watch, toRefs } from 'vue';
+import { computed, watch, toRefs } from 'vue';
 
 import ProjectItem from './ProjectItem.vue';
+import useSearch from '../../hooks/search.js';
 
 export default {
   components: {
-    ProjectItem,
+    ProjectItem
   },
   props: ['user'],
   setup(props) {
+    /*
     const enteredSearchTerm = ref('');
     const activeSearchTerm = ref('');
 
@@ -34,11 +44,27 @@ export default {
       }
       return props.user.projects;
     });
+    */
 
-    const hasProjects = computed(function () {
-      return props.user.projects && availableProjects.value.length > 0;
+    const { user } = toRefs(props);
+
+    // prevents projects from being null at the beginning and
+    // updates only when the user prop changes
+    const projects = computed(function() {
+      return user.value ? user.value.projects : [];
     });
 
+    // Custom hook:
+    const { enteredSearchTerm, availableItems, updateSearch } = useSearch(
+      projects,
+      'title'
+    );
+
+    const hasProjects = computed(function() {
+      return user.value.projects && availableItems.value.length > 0;
+    });
+
+    /*
     watch(enteredSearchTerm, function (newValue) {
       setTimeout(() => {
         if (newValue === enteredSearchTerm.value) {
@@ -46,27 +72,30 @@ export default {
         }
       }, 300);
     });
+    */
 
     // const propsWithRefs = toRefs(props);
     // const user = propsWithRefs.user;
 
-    const { user } = toRefs(props);
-
-    watch(user, function () {
-      enteredSearchTerm.value = '';
+    watch(user, function() {
+      // enteredSearchTerm.value = '';
+      // calls instead the update search functionality of the aearch.js custom hook
+      updateSearch('');
     });
 
+    /*
     function updateSearch(val) {
       enteredSearchTerm.value = val;
     }
+    */
 
     return {
       enteredSearchTerm,
-      availableProjects,
+      availableProjects: availableItems,
       hasProjects,
-      updateSearch,
+      updateSearch
     };
-  },
+  }
   // data() {
   //   return {
   //     enteredSearchTerm: '',
