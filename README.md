@@ -112,6 +112,11 @@ However, from section-8 onwards, different Vue small apps were bootstrapped with
   - Lazy loading routes
   - How to deploy to Firebase hosting
 - **Section 19**: The Composition API
+  - Replacing "data" with "refs" and building "reactive" objects
+  - Replacing "methods" with regular functions, "computed properties" with the "computed" function and "watchers" with the "watch" function
+  - Using components, props, custom events, provide/inject and lifecycle hooks with the Composition API
+  - Using Routing and Vuex with the Composition API
+- **Section 20**: Reusing functionality: Mixins and Custom Composition Functions
 
 ### Useful resources
 
